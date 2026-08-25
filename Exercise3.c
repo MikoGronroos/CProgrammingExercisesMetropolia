@@ -24,17 +24,15 @@ int main(){
   }
   int selection = -1;
   while(selection != 0){
-  
     printf("Enter student number (1 – %d) or 0 to stop: ", amountOfStudents);
     scanf("%d", &selection);
-    if(selection == 0){
-      break;
-    }
-    printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
-    int grade = 0;
-    scanf("%d", &grade);
-    if(is_valid_grade(grade) == 0){
-      grades[selection-1] = grade;
+    if(selection != 0){
+      printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
+      int grade = 0;
+      scanf("%d", &grade);
+      if(is_valid_grade(grade) == 0){
+        grades[selection-1] = grade;
+      }
     }
 
   }
