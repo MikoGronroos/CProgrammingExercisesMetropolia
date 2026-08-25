@@ -1,5 +1,18 @@
 #include <stdio.h>
 
+int is_valid_grade(int grade){
+  int value = 0;
+  
+  if(grade == -1){
+    value = 1;  
+  }
+  if(grade < 0 || grade > 5){
+    printf("Invalid grade!\n");
+    value = 1;
+  }
+  return value;
+}
+
 int main(){
 
   int amountOfStudents = 0;
@@ -20,14 +33,9 @@ int main(){
     printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
     int grade = 0;
     scanf("%d", &grade);
-    if(grade == -1){
-      continue;
+    if(is_valid_grade(grade) == 0){
+      grades[selection-1] = grade;
     }
-    if(grade < 0 || grade > 5){
-      printf("Invalid grade!\n");
-      continue;
-    }
-    grades[selection-1] = grade;
 
   }
   printf("Student Grade\n");
