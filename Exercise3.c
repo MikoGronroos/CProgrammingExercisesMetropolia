@@ -2,11 +2,7 @@
 
 int is_valid_grade(int grade){
   int value = 0;
-  
-  if(grade == -1){
-    value = 1;  
-  }
-  if(grade < 0 || grade > 5){
+  if((grade < 0 || grade > 5) && grade != -1){
     printf("Invalid grade!\n");
     value = 1;
   }
@@ -37,10 +33,13 @@ int main(){
     printf("Enter student number (1 – %d) or 0 to stop: ", amountOfStudents);
     scanf("%d", &selection);
     if(is_valid_selection(selection, amountOfStudents) == 0){
-      printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
       int grade = 0;
-      scanf("%d", &grade);
-      if(is_valid_grade(grade) == 0){
+      do{
+        printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
+        scanf("%d", &grade);
+      }
+      while(is_valid_grade(grade) == 1);
+      if(grade != -1){
         grades[selection-1] = grade;
       }
     }
