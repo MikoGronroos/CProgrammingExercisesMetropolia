@@ -13,6 +13,16 @@ int is_valid_grade(int grade){
   return value;
 }
 
+int is_valid_selection(int selection, int amountOfStudents){
+  int value = 0;
+
+  if (selection <= 0 || selection > amountOfStudents){
+    value = 1;
+  }
+  return value;
+
+}
+
 int main(){
 
   int amountOfStudents = 0;
@@ -26,7 +36,7 @@ int main(){
   while(selection != 0){
     printf("Enter student number (1 – %d) or 0 to stop: ", amountOfStudents);
     scanf("%d", &selection);
-    if(selection != 0){
+    if(is_valid_selection(selection, amountOfStudents) == 0){
       printf("Enter grade (0 – 5) for student %d or -1 to cancel:", selection);
       int grade = 0;
       scanf("%d", &grade);
