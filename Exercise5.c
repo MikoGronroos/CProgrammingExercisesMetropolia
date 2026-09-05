@@ -3,10 +3,17 @@
 int read_range(int low, int high){
   int number = 0;
   int result = 0;
-  while(result != 1 || number < low || number > high){
+  int finished = 0;
+  while(finished == 0){
     printf("Roll a die and enter your result\n");
     printf("Enter a number between %d and %d: ", low, high);
     result = scanf("%d", &number);
+    if(result != 1 || number < low || number > high){
+      printf("Invalid input\n");
+      while(getchar() != '\n');
+    }else{
+      finished = 1;
+    }
   }
   return number;
 }
