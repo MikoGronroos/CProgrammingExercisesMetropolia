@@ -5,7 +5,6 @@
 
 int main(void){
   char buffer[128];
-  char stop[] = "stop";
   do{
     printf("Enter a string: ");
     fgets(buffer, sizeof(buffer), stdin);
