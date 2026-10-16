@@ -37,7 +37,7 @@ int main(void){
 
   if(amountOfItems > 0){
     for(int i = 0; i < amountOfItems; i++){
-      printf("%-8.2f%s\n", items[i]->price, items[i]->name);
+      printf("%-10.2f | %s\n", items[i]->price, items[i]->name);
       free(items[i]);
     }
   }
