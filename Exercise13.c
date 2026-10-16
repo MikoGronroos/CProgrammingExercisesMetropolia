@@ -31,8 +31,8 @@ int main(void){
       }
     }
     fclose(fptr);
+    printf("Lowest was %d, highest was %d and the count was %d\n", lowest, highest, count);
   }else{ 
     fprintf(stderr, "Cant open the %s file\n", buffer);
   }
-  printf("Lowest was %d, highest was %d and the count was %d\n", lowest, highest, count);
 }
