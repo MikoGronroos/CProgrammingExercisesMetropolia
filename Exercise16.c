@@ -3,10 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-nnode *apped_node(){
-  
-}
-
 int main(void){
    
   char buffer[128];
