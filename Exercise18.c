@@ -7,7 +7,7 @@ int main(void){
    char buffer[128];
    int number;
    srand(time(NULL));
-   running = true;
+   bool running = true;
    while(running){  
       int randomNumber = rand() % (100 + 1);
       bool numberIsValid = false;
